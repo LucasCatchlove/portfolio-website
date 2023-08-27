@@ -1,13 +1,15 @@
 
 type ProjectProps = {
     title: string;
-    company: string;
-    startDate: string; // might need to change this to a datetime format
-    endDate: string; // same comment as previous line
+    description: string;
+    technologies: string[];
 }
 
 const ProjectCard = (data: ProjectProps) => {
-
+    return <div>
+        <div></div>
+        
+    </div>
 
     
 }
