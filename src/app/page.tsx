@@ -1,5 +1,6 @@
 import { idText } from "typescript";
 import './globals.css'
+import ExperienceCard from "@/components/ExperienceCard";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <main className="right-scroll-panel h-[100rem] overflow-y-auto mt-24 mx-12">
         <h2>hello from scroll panel!</h2>
         <section id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
-        <section id="experience"></section>
+        <section id="experience" className="mt-4"><ExperienceCard /></section>
         <section id="projects"></section>
       </main>
     </div>
