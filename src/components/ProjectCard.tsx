@@ -8,13 +8,13 @@ type ProjectProps = {
 const ProjectCard = (data: ProjectProps) => {
 
         return (
-          <div className="w-full grid grid-cols-8 gap-2 mt-4">
+          <div className="w-full grid grid-cols-8 gap-2 mt-12">
             <div className="h-full border-none border-2 border-sky-500 col-span-2 flex flex-col">
                 image here
             </div>
             <div className="h-full flex flex-col border-none border-2 border-sky-500 col-span-6">
-                <a href="companywebsite.com"> Clickable Project Name </a>
-              <div className="mt-4">
+                <a href="companywebsite.com" className="text-teal-200 text-bold"> Clickable Project Name </a>
+              <div className="mt-4 opacity-50">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                 minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -23,7 +23,7 @@ const ProjectCard = (data: ProjectProps) => {
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                 culpa qui officia deserunt mollit anim id est laborum.
               </div>
-              <div className="mt-4">technologies are listed here</div>
+              <div className="mt-4 text-yellow-200">#example #hashtags #here</div>
             </div>
           </div>
         );

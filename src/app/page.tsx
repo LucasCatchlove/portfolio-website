@@ -8,18 +8,29 @@ export default function Home() {
     <div className="grid lg:grid-cols-2 font-montserrat mx-12">
       <header className="lg:sticky max-h-screen flex flex-col lg:top-0 py-24 lg:ml-12">
         <div id="basics">
-          <h1 className="text-5xl font-bold mb-4">Lucas Catchlove</h1>
-          <h2 className="text-xl mb-8">Software Engineer</h2>
-          <p className="max-w-xs">I enjoy building software professionally and at home. Currently looking for work!</p>
+          <h1 className="text-5xl font-bold mb-4 text-slate-200">
+            Lucas Catchlove
+          </h1>
+          <h2 className="text-2xl mb-8 text-teal-200">Software Engineer</h2>
+          <p className="md:max-w-xs opacity-75 leading-relaxed">
+            I enjoy designing and building software both professionally and at
+            home (:
+          </p>
         </div>
-        <nav></nav>
+        <nav className="mt-24">
+         <ol className="flex flex-col space-evenly text-xl">
+          <li><a href="#about">about</a></li>
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#projects">projects</a></li>
+         </ol>
+        </nav>
         <div id="socials"></div>
       </header>
 
-      <main className="lg:mt-24 lg:mr-12">
+      <main className="lg:mt-24 lg:mr-12 mb-24">
         <section id="about">
-          <h2 className="uppercase mb-4 lg:hidden">About</h2>
-          <p>
+          <h2 className="uppercase mb-12 lg:hidden opacity-80 text-2xl">About</h2>
+          <p className="opacity-75">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -28,24 +39,18 @@ export default function Home() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p className="mt-2">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-          </p>
         </section>
 
-        <section id="experience" className="mt-48">
-          <h2 className="uppercase mb-4">Experience</h2>
-          {[1, 2, 3].map((e, i) => (
+        <section id="experience" className="lg:mt-28 pt-24">
+          <h2 className="uppercase mb-12 text-2xl opacity-80">Experience</h2>
+          {[1, 2].map((e, i) => (
             <ExperienceCard key={i} />
           ))}
         </section>
 
-        <section id="projects" className="mt-24">
-        <h2 className="uppercase mb-4">Projects</h2>
-          {[1, 2, 3].map((e, i) => (
+        <section id="projects" className="pt-24">
+          <h2 className="uppercase mb-12 text-2xl opacity-80">Projects</h2>
+          {[1, 2].map((e, i) => (
             <ProjectCard key={i} />
           ))}
         </section>
