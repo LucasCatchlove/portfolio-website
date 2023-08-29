@@ -6,17 +6,17 @@ import ProjectCard from "@/components/ProjectCard";
 export default function Home() {
   return (
     <div className="grid lg:grid-cols-2 font-montserrat mx-12">
-      <header className="left-panel border-box lg:max-h-screen flex flex-col lg:sticky lg:top-0 py-24 lg:ml-12">
+      <header className="lg:sticky max-h-screen flex flex-col lg:top-0 py-24 lg:ml-12">
         <div id="basics">
           <h1 className="text-5xl font-bold mb-4">Lucas Catchlove</h1>
           <h2 className="text-xl mb-8">Software Engineer</h2>
-          <p>I love building software!</p>
+          <p className="max-w-xs">I enjoy building software professionally and at home. Currently looking for work!</p>
         </div>
         <nav></nav>
         <div id="socials"></div>
       </header>
 
-      <main className="right-scroll-panel h-[100rem] overflow-y-auto lg:mt-24 lg:mr-12">
+      <main className="lg:mt-24 lg:mr-12">
         <section id="about">
           <h2 className="uppercase mb-4 lg:hidden">About</h2>
           <p>
