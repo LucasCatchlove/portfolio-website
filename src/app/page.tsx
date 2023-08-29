@@ -1,6 +1,7 @@
 import { idText } from "typescript";
 import "./globals.css";
 import ExperienceCard from "@/components/ExperienceCard";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -28,20 +29,26 @@ export default function Home() {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
           <p className="mt-2">
-            Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
           </p>
         </section>
+
         <section id="experience" className="mt-48">
           <h2 className="uppercase mb-4">Experience</h2>
           {[1, 2, 3].map((e, i) => (
             <ExperienceCard key={i} />
           ))}
-          {/* <ExperienceCard /> */}
         </section>
-        <section id="projects" className="mt-24"></section>
+
+        <section id="projects" className="mt-24">
+        <h2 className="uppercase mb-4">Projects</h2>
+          {[1, 2, 3].map((e, i) => (
+            <ProjectCard key={i} />
+          ))}
+        </section>
       </main>
     </div>
   );
