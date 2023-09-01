@@ -4,6 +4,9 @@ import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
+
+
+  
   return (
     <div className="grid lg:grid-cols-2 font-montserrat mx-12">
       <header className="lg:sticky max-h-screen flex flex-col lg:top-0 py-24 lg:ml-12">
@@ -13,13 +16,12 @@ export default function Home() {
           </h1>
           <h2 className="text-2xl mb-8 text-teal-200">Software Engineer</h2>
           <p className="md:max-w-xs opacity-75 leading-relaxed">
-            I enjoy designing and building software both professionally and at
+            I enjoy designing and building software professionally and at
             home (:
           </p>
         </div>
         <nav className="mt-24">
          <ol className="flex flex-col space-evenly text-xl">
-          <li><a href="#about">about</a></li>
           <li><a href="#experience">experience</a></li>
           <li><a href="#projects">projects</a></li>
          </ol>
