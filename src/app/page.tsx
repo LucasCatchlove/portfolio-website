@@ -2,20 +2,25 @@
 import "./globals.css";
 import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [navhighlight, setNav] = useState("");
   useEffect(() => {
-
     function handleIntersection(
       entries: IntersectionObserverEntry[],
       observer: IntersectionObserver
     ) {
       entries.forEach((entry) => {
-        console.log(entry.target);
         if (entry.isIntersecting) {
-          // todo
-          //needs refactor to avoid client side rendering!
+          switch (entry.target.id) {
+            case "experience":
+              setNav("experience");
+              break;
+            case "projects":
+              setNav("projects");
+              break;
+          }
         }
       });
     }
@@ -23,21 +28,20 @@ export default function Home() {
     const options: IntersectionObserverInit = {
       root: null, // Use the viewport as the root
       rootMargin: "0px", // No margin
-      threshold: 0.0, // Fire the callback when even a single pixel is in the viewport
+      threshold: 0,
     };
 
     const observer = new IntersectionObserver(handleIntersection, options);
 
     const experienceElement = document.getElementById("experience");
-    const aboutElement = document.getElementById("about");
     const projectsElement = document.getElementById("projects");
 
-    if (experienceElement && aboutElement && projectsElement) {
-      observer.observe(experienceElement);
-      observer.observe(aboutElement);
+    if (experienceElement && projectsElement) {
       observer.observe(projectsElement);
+      observer.observe(experienceElement);
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="grid lg:grid-cols-2 font-montserrat mx-12">
@@ -55,10 +59,20 @@ export default function Home() {
         <nav className="mt-24">
           <ol className="flex flex-col space-evenly text-xl">
             <li>
-              <a href="#experience">experience</a>
+              <a
+                href="#experience"
+                className={navhighlight == "experience" ? "text-3xl" : ""}
+              >
+                experience
+              </a>
             </li>
             <li>
-              <a href="#projects">projects</a>
+              <a
+                href="#projects"
+                className={navhighlight == "projects" ? "text-3xl" : ""}
+              >
+                projects
+              </a>
             </li>
           </ol>
         </nav>
