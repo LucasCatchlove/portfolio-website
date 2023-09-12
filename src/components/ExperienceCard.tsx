@@ -1,3 +1,5 @@
+import { sql } from "@vercel/postgres";
+
 type ExperienceProps = {
   // title: string;
   // company: string;
@@ -8,7 +10,10 @@ type ExperienceProps = {
   // prevTitles: string[];
 };
 
-const ExperienceCard = (data: ExperienceProps) => {
+const ExperienceCard = async (data: ExperienceProps) => {
+  const text2 = await sql`SELECT * from projects`;
+  console.log(text2);
+
   return (
     <div className="w-full grid grid-cols-8 gap-2 mt-12">
       <div className="h-full col-span-2 flex flex-col opacity-50">
@@ -16,8 +21,14 @@ const ExperienceCard = (data: ExperienceProps) => {
       </div>
       <div className="h-full flex flex-col col-span-6">
         <div>
-          <a href="https://google.ca/" className="font-bold text-teal-200">Clickable Title</a> ·
-          <a href="companywebsite.com" className="opacity-80"> Clickable Company</a>
+          <a href="https://google.ca/" className="font-bold text-teal-200">
+            Clickable Title
+          </a>{" "}
+          ·
+          <a href="companywebsite.com" className="opacity-80">
+            {" "}
+            Clickable Company
+          </a>
         </div>
         <div className="mt-4 opacity-50 text-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

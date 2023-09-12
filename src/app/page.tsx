@@ -26,8 +26,8 @@ export default function Home() {
     }
 
     const options: IntersectionObserverInit = {
-      root: null, // Use the viewport as the root
-      rootMargin: "0px", // No margin
+      root: null, 
+      rootMargin: "0px",
       threshold: 0,
     };
 
