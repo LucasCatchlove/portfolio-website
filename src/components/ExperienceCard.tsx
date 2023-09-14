@@ -22,7 +22,7 @@ const ExperienceCard = async (data: ExperienceProps) => {
       <div className="h-full flex flex-col col-span-6">
         <div>
           <a href="https://google.ca/" className="font-bold text-teal-200">
-            Clickable Title
+            {text2.rows[0].title}
           </a>{" "}
           ·
           <a href="companywebsite.com" className="opacity-80">

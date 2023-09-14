@@ -1,47 +1,52 @@
-"use client";
 import "./globals.css";
 import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
-import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+// import { useEffect, useState } from "react";
+
+
 
 export default function Home() {
-  const [navhighlight, setNav] = useState("");
-  useEffect(() => {
-    function handleIntersection(
-      entries: IntersectionObserverEntry[],
-      observer: IntersectionObserver
-    ) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          switch (entry.target.id) {
-            case "experience":
-              setNav("experience");
-              break;
-            case "projects":
-              setNav("projects");
-              break;
-          }
-        }
-      });
-    }
+  // const [navhighlight, setNav] = useState("");
+  // useEffect(() => {
+  //   function handleIntersection(
+  //     entries: IntersectionObserverEntry[],
+  //     observer: IntersectionObserver
+  //   ) {
+  //     entries.forEach((entry) => {
 
-    const options: IntersectionObserverInit = {
-      root: null, 
-      rootMargin: "0px",
-      threshold: 0,
-    };
+  //       if (entry.isIntersecting) {
+  //         console.log(entry.target.id)
+  //         switch (entry.target.id) {
+  //           case "experience":
+  //             setNav("experience");
+  //             break;
+  //           case "projects":
+  //             setNav("projects");
+  //             break;
+  //         }
+  //       }
+  //     });
+  //   }
 
-    const observer = new IntersectionObserver(handleIntersection, options);
+  //   const options: IntersectionObserverInit = {
+  //     root: null,
+  //     rootMargin: "0px",
+  //     threshold: 0,
+  //   };
 
-    const experienceElement = document.getElementById("experience");
-    const projectsElement = document.getElementById("projects");
+  //   const observer = new IntersectionObserver(handleIntersection, options);
 
-    if (experienceElement && projectsElement) {
-      observer.observe(projectsElement);
-      observer.observe(experienceElement);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  //   const experienceElement = document.getElementById("experience");
+  //   const projectsElement = document.getElementById("projects");
+
+  //   if (experienceElement && projectsElement) {
+  //     observer.observe(projectsElement);
+  //     observer.observe(experienceElement);
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div className="grid lg:grid-cols-2 font-montserrat mx-12">
@@ -56,12 +61,12 @@ export default function Home() {
             (:
           </p>
         </div>
-        <nav className="mt-24">
+        {/* <nav className="mt-24">
           <ol className="flex flex-col space-evenly text-xl">
             <li>
               <a
                 href="#experience"
-                className={navhighlight == "experience" ? "text-3xl" : ""}
+                className={navhighlight === "experience" ? "text-4xl" : ""}
               >
                 experience
               </a>
@@ -69,13 +74,40 @@ export default function Home() {
             <li>
               <a
                 href="#projects"
-                className={navhighlight == "projects" ? "text-3xl" : ""}
+                className={navhighlight === "projects" ? "text-4xl" : ""}
               >
                 projects
               </a>
             </li>
           </ol>
-        </nav>
+        </nav> */}
+        <div className="mt-24">
+          <ol className="flex flex-col space-evenly text-xl">
+            <li>
+              
+              <a
+                href="lucascatchlove@gmail.com"
+              >
+                Email
+              </a>
+            </li>
+            <li>
+            <FontAwesomeIcon icon={faGithub} />
+              <a
+                href="https://github.com/LucasCatchlove"
+              >
+                Github
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/lucascatchlove/"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ol>
+        </div>
         <div id="socials"></div>
       </header>
 
