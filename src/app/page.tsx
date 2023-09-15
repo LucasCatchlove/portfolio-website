@@ -2,10 +2,9 @@ import "./globals.css";
 import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // import { useEffect, useState } from "react";
-
-
 
 export default function Home() {
   // const [navhighlight, setNav] = useState("");
@@ -58,7 +57,7 @@ export default function Home() {
           <h2 className="text-2xl mb-8 text-teal-200">Software Engineer</h2>
           <p className="md:max-w-xs opacity-75 leading-relaxed">
             I enjoy designing and building software professionally and at home
-            (:
+            :)
           </p>
         </div>
         {/* <nav className="mt-24">
@@ -81,26 +80,24 @@ export default function Home() {
             </li>
           </ol>
         </nav> */}
-        <div className="mt-24">
+        <div id="socials" className="mt-24">
           <ol className="flex flex-col space-evenly text-xl">
             <li>
-              
-              <a
-                href="lucascatchlove@gmail.com"
-              >
+              <FontAwesomeIcon icon={faEnvelope} />
+              <a className="ml-2" href="lucascatchlove@gmail.com">
                 Email
               </a>
             </li>
             <li>
-            <FontAwesomeIcon icon={faGithub} />
-              <a
-                href="https://github.com/LucasCatchlove"
-              >
+              <FontAwesomeIcon icon={faGithub} />
+              <a className="ml-2" href="https://github.com/LucasCatchlove">
                 Github
               </a>
             </li>
             <li>
+              <FontAwesomeIcon icon={faLinkedin} />
               <a
+                className="ml-2"
                 href="https://www.linkedin.com/in/lucascatchlove/"
               >
                 LinkedIn
@@ -108,7 +105,6 @@ export default function Home() {
             </li>
           </ol>
         </div>
-        <div id="socials"></div>
       </header>
 
       <main className="lg:mt-24 lg:mr-12 mb-24">
