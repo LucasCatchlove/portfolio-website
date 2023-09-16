@@ -6,53 +6,9 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { sql } from "@vercel/postgres";
 
-// import { useEffect, useState } from "react";
-
 export default async function Home() {
-  // const [navhighlight, setNav] = useState("");
-  // useEffect(() => {
-  //   function handleIntersection(
-  //     entries: IntersectionObserverEntry[],
-  //     observer: IntersectionObserver
-  //   ) {
-  //     entries.forEach((entry) => {
-
-  //       if (entry.isIntersecting) {
-  //         console.log(entry.target.id)
-  //         switch (entry.target.id) {
-  //           case "experience":
-  //             setNav("experience");
-  //             break;
-  //           case "projects":
-  //             setNav("projects");
-  //             break;
-  //         }
-  //       }
-  //     });
-  //   }
-
-  //   const options: IntersectionObserverInit = {
-  //     root: null,
-  //     rootMargin: "0px",
-  //     threshold: 0,
-  //   };
-
-  //   const observer = new IntersectionObserver(handleIntersection, options);
-
-  //   const experienceElement = document.getElementById("experience");
-  //   const projectsElement = document.getElementById("projects");
-
-  //   if (experienceElement && projectsElement) {
-  //     observer.observe(projectsElement);
-  //     observer.observe(experienceElement);
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
   const projectsData = await sql`SELECT * from projects`;
-  console.log(projectsData);
   const experienceData = await sql`SELECT * from experience`;
-  console.log(experienceData);
 
   return (
     <div className="grid lg:grid-cols-2 font-montserrat mx-12">
@@ -62,26 +18,7 @@ export default async function Home() {
           <h2 className="text-2xl mb-8 text-teal-200">Software Engineer</h2>
           <p className="md:max-w-xs opacity-75 leading-relaxed">I enjoy designing and building software professionally and at home :)</p>
         </div>
-        {/* <nav className="mt-24">
-          <ol className="flex flex-col space-evenly text-xl">
-            <li>
-              <a
-                href="#experience"
-                className={navhighlight === "experience" ? "text-4xl" : ""}
-              >
-                experience
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className={navhighlight === "projects" ? "text-4xl" : ""}
-              >
-                projects
-              </a>
-            </li>
-          </ol>
-        </nav> */}
+
         <div id="socials" className="mt-24 md:flex md:justify-items-center">
           <ol className="flex flex-col space-evenly xs:text-3xl text-xl">
             <li className="transition ease-in-out hover:text-yellow-200 duration-300 flex flex-items-center">
@@ -115,7 +52,7 @@ export default async function Home() {
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
             laborum.
           </p>
-          <pre>{JSON.stringify(experienceData, null, 2)}</pre>
+          {/* <pre>{JSON.stringify(experienceData, null, 2)}</pre> */}
         </section>
 
         <section id="experience" className="lg:mt-28 pt-24">
@@ -143,4 +80,66 @@ export default async function Home() {
       </main>
     </div>
   );
+}
+
+// const [navhighlight, setNav] = useState("");
+// useEffect(() => {
+//   function handleIntersection(
+//     entries: IntersectionObserverEntry[],
+//     observer: IntersectionObserver
+//   ) {
+//     entries.forEach((entry) => {
+
+//       if (entry.isIntersecting) {
+//         console.log(entry.target.id)
+//         switch (entry.target.id) {
+//           case "experience":
+//             setNav("experience");
+//             break;
+//           case "projects":
+//             setNav("projects");
+//             break;
+//         }
+//       }
+//     });
+//   }
+
+//   const options: IntersectionObserverInit = {
+//     root: null,
+//     rootMargin: "0px",
+//     threshold: 0,
+//   };
+
+//   const observer = new IntersectionObserver(handleIntersection, options);
+
+//   const experienceElement = document.getElementById("experience");
+//   const projectsElement = document.getElementById("projects");
+
+//   if (experienceElement && projectsElement) {
+//     observer.observe(projectsElement);
+//     observer.observe(experienceElement);
+//   }
+//   // eslint-disable-next-line react-hooks/exhaustive-deps
+// }, []);
+{
+  /* <nav className="mt-24">
+          <ol className="flex flex-col space-evenly text-xl">
+            <li>
+              <a
+                href="#experience"
+                className={navhighlight === "experience" ? "text-4xl" : ""}
+              >
+                experience
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className={navhighlight === "projects" ? "text-4xl" : ""}
+              >
+                projects
+              </a>
+            </li>
+          </ol>
+        </nav> */
 }
