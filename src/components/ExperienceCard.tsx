@@ -1,40 +1,39 @@
-import { sql } from "@vercel/postgres";
-
-type ExperienceProps = {
-  // title: string;
-  // company: string;
-  // startDate: string;
-  // endDate: string;
-  // technologies: string[];
-  // description: string;
-  // prevTitles: string[];
+export type ExperienceProps = {
+  title: string;
+  company: string;
+  start_date: string;
+  end_date: string;
+  technologies: string[];
+  description: string;
+  prev_titles: string[];
 };
 
-const ExperienceCard = async (data: ExperienceProps) => {
-  //const text2 = await sql`SELECT * from projects`;
-  //console.log(text2);
-
+const ExperienceCard = async ({ ...ExperienceProps }) => {
   return (
     <div className="w-full grid grid-cols-8 gap-2 mt-12 hover:shadow-md p-8 rounded-lg">
       <div className="h-full col-span-2 flex flex-col opacity-50">
-        <div className="text-md">2021 - 2022</div>
+        <div className="text-md">
+          {new Date(ExperienceProps.start_date).getFullYear()} - {new Date(ExperienceProps.end_date).getFullYear()}
+        </div>
       </div>
       <div className="h-full flex flex-col col-span-6">
         <div>
           <a href="https://google.ca/" className="font-bold text-teal-200">
-            {/* {text2.rows[0].title} */}
+            {ExperienceProps.title}
           </a>
           ·
           <a href="companywebsite.com" className="opacity-80">
-            Clickable Company
+            {ExperienceProps.company}
           </a>
         </div>
-        <div className="mt-4 opacity-50 text-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.
+        <div className="mt-4 opacity-50 text-sm">{ExperienceProps.description}</div>
+        <div className="mt-4 text-yellow-200">
+          {ExperienceProps.technologies.map((e: string, i: number) => (
+            <a className="mr-2" key={i}>
+              #{e.replace(" ", "")}
+            </a>
+          ))}
         </div>
-        <div className="mt-4 text-yellow-200">#react #postgres</div>
       </div>
     </div>
   );

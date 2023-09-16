@@ -1,12 +1,14 @@
 import "./globals.css";
-import ExperienceCard from "@/components/ExperienceCard";
+import ExperienceCard, { ExperienceProps } from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { sql } from "@vercel/postgres";
+
 // import { useEffect, useState } from "react";
 
-export default function Home() {
+export default async function Home() {
   // const [navhighlight, setNav] = useState("");
   // useEffect(() => {
   //   function handleIntersection(
@@ -46,6 +48,11 @@ export default function Home() {
   //   }
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, []);
+
+  const projectsData = await sql`SELECT * from projects`;
+  console.log(projectsData);
+  const experienceData = await sql`SELECT * from experience`;
+  console.log(experienceData);
 
   return (
     <div className="grid lg:grid-cols-2 font-montserrat mx-12">
@@ -108,19 +115,29 @@ export default function Home() {
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
             laborum.
           </p>
+          <pre>{JSON.stringify(experienceData, null, 2)}</pre>
         </section>
 
         <section id="experience" className="lg:mt-28 pt-24">
           <h2 className="uppercase mb-12 text-2xl opacity-80">Experience</h2>
-          {[1, 2].map((e, i) => (
-            <ExperienceCard key={i} />
-          ))}
+          {experienceData.rows
+            .sort((a: any, b: any) => {
+              const yearA = new Date(a.start_date);
+              const yearB = new Date(b.start_date);
+
+              if (yearA < yearB) return 1;
+              else if (yearA > yearB) return -1;
+              else return 0;
+            })
+            .map((p, i) => (
+              <ExperienceCard key={i} {...p} />
+            ))}
         </section>
 
         <section id="projects" className="pt-24">
           <h2 className="uppercase mb-12 text-2xl opacity-80">Projects</h2>
-          {[1, 2].map((e, i) => (
-            <ProjectCard key={i} />
+          {projectsData.rows.map((e, i) => (
+            <ProjectCard key={i} {...e} />
           ))}
         </section>
       </main>
