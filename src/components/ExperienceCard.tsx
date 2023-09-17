@@ -1,6 +1,7 @@
 export type ExperienceProps = {
   title: string;
   company: string;
+  company_website: string;
   start_date: string;
   end_date: string;
   technologies: string[];
@@ -8,7 +9,7 @@ export type ExperienceProps = {
   prev_titles: string[];
 };
 
-const ExperienceCard = async ({ ...ExperienceProps }) => {
+const ExperienceCard = ({ ...ExperienceProps }) => {
   const start_date = new Date(ExperienceProps.start_date);
   const end_date = new Date(ExperienceProps.end_date);
   return (
@@ -18,11 +19,9 @@ const ExperienceCard = async ({ ...ExperienceProps }) => {
       </div>
       <div className="h-full flex flex-col col-span-6">
         <div>
-          <a href="https://google.ca/" className="font-bold text-teal-200">
-            {ExperienceProps.title}
-          </a>
+          <a className="font-bold text-teal-200">{ExperienceProps.title}</a>
           {" · "}
-          <a href="companywebsite.com" className="opacity-80">
+          <a href={ExperienceProps.company_website} className="opacity-80">
             {ExperienceProps.company}
           </a>
         </div>
