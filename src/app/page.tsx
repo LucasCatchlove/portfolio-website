@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import "./globals.css";
 import ExperienceCard, { ExperienceProps } from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
@@ -47,11 +48,15 @@ export default async function Home() {
         <section id="about">
           <h2 className="uppercase mb-12 lg:hidden opacity-80 text-2xl">About</h2>
           <p className="opacity-75">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
+            As a recent graduate in Software Engineering from Concordia University in Montreal, I am eager to kick-start my career in software development.
+            During my free time, I enjoy developing all types of software, however I tend to focus on web application development and robotics.
           </p>
+          <p className="opacity-75 mt-2">
+            It is my belief that getting ones hands dirty and nurturing an appetite for learning is the key to improving engineering skills. These pursuits have
+            significantly helped me improve my own problem-solving skills, and through work experiences, I've become familiar with the software development life
+            cycle within an industry context.
+          </p>
+
           {/* <pre>{JSON.stringify(experienceData, null, 2)}</pre> */}
         </section>
 
