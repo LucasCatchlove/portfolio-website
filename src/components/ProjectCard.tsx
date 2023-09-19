@@ -6,17 +6,33 @@ export type ProjectProps = {
   description: string;
   technologies: string[];
   imageurl: string;
+  repourl?: string;
+  demourl?: string;
 };
 
-const ProjectCard = ({ technologies, title, description, imageurl }: ProjectProps) => {
+const ProjectCard = ({ technologies, title, description, imageurl, repourl, demourl }: ProjectProps) => {
   return (
     <div className="w-full grid grid-cols-8 gap-2 mt-12  hover:shadow-md rounded-lg">
       <div className="h-full border-none border-2 border-sky-500 col-span-2 flex flex-col">
-        <Image src={imageurl} width={200} height={100} alt="project picture" />
+        {imageurl ? <Image src={imageurl} width={200} height={100} alt="project picture" /> : "no image available"}
       </div>
       <div className="h-full flex flex-col border-none border-2 border-sky-500 col-span-6">
-        <a className="text-teal-200 text-bold">{title}</a>
+        <a className="text-teal-200 text-bold" href={repourl}>
+          {title}
+        </a>
         <div className="mt-4 opacity-50">{description}</div>
+
+        <div>
+          {repourl ? <a href={repourl}>repository</a> : <></>}
+          {demourl ? (
+            <>
+              {" · "} <a href={demourl}>demo</a>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
+
         <Hashtags tags={technologies} />
       </div>
     </div>

@@ -79,8 +79,17 @@ export default async function Home() {
         <section id="projects" className="pt-24">
           <h2 className="uppercase mb-12 text-2xl opacity-80">Projects</h2>
           {projectsData.rows.map((e, i) => {
-            console.log(e);
-            return <ProjectCard title={e.title} description={e.description} technologies={e.technologies} imageurl={e.imageurl} key={i} />;
+            return (
+              <ProjectCard
+                title={e.title}
+                description={e.description}
+                technologies={e.technologies}
+                imageurl={e.imageurl}
+                repourl={e.repourl}
+                demourl={e.demourl}
+                key={i}
+              />
+            );
           })}
         </section>
       </main>
