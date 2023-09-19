@@ -8,7 +8,7 @@ config.autoAddCss = false;
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Lucas Catchlove",
+  title: "Lucas Catchlove :: software engineer",
   description: "Lucas Catchlove's portfolio",
 };
 
