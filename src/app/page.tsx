@@ -45,7 +45,7 @@ export default async function Home() {
       </header>
 
       <main className="lg:mt-24 lg:mr-12 mb-24">
-        <section id="about" className="mx-4">
+        <section id="about" className="mt-4">
           <h2 className="uppercase mb-12 lg:hidden opacity-80 text-2xl">About</h2>
           <p className="opacity-75">
             As a recent graduate in Software Engineering from Concordia University in Montreal, I am eager to kick-start my career in software development.
@@ -78,9 +78,10 @@ export default async function Home() {
 
         <section id="projects" className="pt-24">
           <h2 className="uppercase mb-12 text-2xl opacity-80">Projects</h2>
-          {projectsData.rows.map((e, i) => (
-            <ProjectCard title={e.title} description={e.description} technologies={e.technologies} key={i} />
-          ))}
+          {projectsData.rows.map((e, i) => {
+            console.log(e);
+            return <ProjectCard title={e.title} description={e.description} technologies={e.technologies} imageurl={e.imageurl} key={i} />;
+          })}
         </section>
       </main>
     </div>
