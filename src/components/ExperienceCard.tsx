@@ -1,3 +1,5 @@
+import Hashtags from "./Hashtags";
+
 export type ExperienceProps = {
   title: string;
   company: string;
@@ -26,13 +28,7 @@ const ExperienceCard = ({ ...ExperienceProps }) => {
           </a>
         </div>
         <div className="mt-4 opacity-50 text-sm">{ExperienceProps.description}</div>
-        <div className="mt-4 text-yellow-200">
-          {ExperienceProps.technologies.map((e: string, i: number) => (
-            <a className="mr-2 hover:text-yellow-400" key={i} href={`https://www.google.com/search?q=${e}`}>
-              #{e.replace(" ", "")}
-            </a>
-          ))}
-        </div>
+        <Hashtags tags={ExperienceProps.technologies} />
       </div>
     </div>
   );

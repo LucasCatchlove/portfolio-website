@@ -12,12 +12,12 @@ export default async function Home() {
   const experienceData = await sql`SELECT * from experience`;
 
   return (
-    <div className="grid lg:grid-cols-2 font-montserrat mx-12">
+    <div className="grid lg:grid-cols-2 font-montserrat md:mx-12 mx-4">
       <header className="lg:sticky max-h-screen flex flex-col lg:top-0 py-24 lg:ml-12">
-        <div id="basics">
+        <div id="basics" className="mx-4">
           <h1 className="text-5xl font-bold mb-4 text-slate-200">Lucas Catchlove</h1>
           <h2 className="text-2xl mb-8 text-teal-200">Software Engineer</h2>
-          <p className="md:max-w-xs opacity-75 leading-relaxed">I enjoy designing and building software professionally and at home :)</p>
+          <p className="opacity-75 leading-relaxed mx-4">I enjoy designing and building software professionally and at home :)</p>
         </div>
 
         <div id="socials" className="mt-24 md:flex md:justify-items-center">
@@ -45,7 +45,7 @@ export default async function Home() {
       </header>
 
       <main className="lg:mt-24 lg:mr-12 mb-24">
-        <section id="about">
+        <section id="about" className="mx-4">
           <h2 className="uppercase mb-12 lg:hidden opacity-80 text-2xl">About</h2>
           <p className="opacity-75">
             As a recent graduate in Software Engineering from Concordia University in Montreal, I am eager to kick-start my career in software development.
@@ -79,7 +79,7 @@ export default async function Home() {
         <section id="projects" className="pt-24">
           <h2 className="uppercase mb-12 text-2xl opacity-80">Projects</h2>
           {projectsData.rows.map((e, i) => (
-            <ProjectCard key={i} {...e} />
+            <ProjectCard title={e.title} description={e.description} technologies={e.technologies} key={i} />
           ))}
         </section>
       </main>
