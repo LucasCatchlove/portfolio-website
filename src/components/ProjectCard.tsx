@@ -22,11 +22,20 @@ const ProjectCard = ({ technologies, title, description, imageurl, repourl, demo
         </a>
         <div className="mt-4 opacity-50">{description}</div>
 
-        <div>
-          {repourl ? <a href={repourl}>repository</a> : <></>}
+        <div className="mt-2">
+          {repourl ? (
+            <a className="transition ease-in-out hover:text-yellow-200 duration-300" href={repourl}>
+              repository
+            </a>
+          ) : (
+            <></>
+          )}
           {demourl ? (
             <>
-              {" · "} <a href={demourl}>demo</a>
+              {" · "}{" "}
+              <a className="transition ease-in-out hover:text-yellow-200 duration-300" href={demourl}>
+                demo
+              </a>
             </>
           ) : (
             <></>
