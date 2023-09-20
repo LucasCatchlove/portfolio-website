@@ -1,6 +1,6 @@
 import Hashtags from "./Hashtags";
 
-export type ExperienceProps = {
+type ExperienceProps = {
   title: string;
   company: string;
   company_website: string;

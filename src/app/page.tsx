@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import "./globals.css";
-import ExperienceCard, { ExperienceProps } from "@/components/ExperienceCard";
+import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
