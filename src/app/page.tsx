@@ -46,7 +46,7 @@ export default async function Home() {
 
       <main className="lg:mt-24 lg:mr-12 mb-24">
         <section id="about" className="mt-4">
-          {/* <h2 className="uppercase mb-12 lg:hidden opacity-80 text-2xl">About</h2> */}
+          <h2 className="uppercase mb-12 lg:hidden opacity-80 text-2xl">About</h2>
           <p className="opacity-75">
             As a recent graduate in Software Engineering from Concordia University in Montreal, I am eager to kick-start my career in software development.
             During my free time, I enjoy developing all types of software, however I tend to focus on web application development and robotics.
