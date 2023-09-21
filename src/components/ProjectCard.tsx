@@ -12,7 +12,7 @@ type ProjectProps = {
 
 const ProjectCard = ({ technologies, title, description, imageurl, repourl, demourl }: ProjectProps) => {
   return (
-    <div className="w-full grid grid-cols-8 gap-2 mt-12  hover:shadow-md rounded-lg p-4">
+    <div className="w-full grid grid-cols-8 gap-2 mt-12 hover:shadow-md rounded-lg p-4">
       <div className="h-full border-none border-2 border-sky-500 col-span-2 flex flex-col mr-2">
         {imageurl ? <Image className="rounded-sm" src={imageurl} width={200} height={200} alt="project picture" /> : "no image available"}
       </div>
