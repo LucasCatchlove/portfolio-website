@@ -14,7 +14,7 @@ const ProjectCard = ({ technologies, title, description, imageurl, repourl, demo
   return (
     <div className="w-full grid grid-cols-8 gap-2 mt-12  hover:shadow-md rounded-lg">
       <div className="h-full border-none border-2 border-sky-500 col-span-2 flex flex-col">
-        {imageurl ? <Image src={imageurl} width={200} height={100} alt="project picture" /> : "no image available"}
+        {imageurl ? <Image className="rounded-md" src={imageurl} width={200} height={100} alt="project picture" /> : "no image available"}
       </div>
       <div className="h-full flex flex-col border-none border-2 border-sky-500 col-span-6">
         <a className="text-teal-200 text-bold" href={repourl}>
